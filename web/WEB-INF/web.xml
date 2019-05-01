@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
+    <servlet>
+        <servlet-name>OrderController</servlet-name>
+        <servlet-class>store.order.OrderController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>CatalogController</servlet-name>
+        <servlet-class>store.order.CatalogController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>OrderController</servlet-name>
+        <url-pattern>/order</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CatalogController</servlet-name>
+        <url-pattern>/catalog</url-pattern>
+    </servlet-mapping>
+    <listener>
+        <listener-class>store.util.OrderContextListener</listener-class>
+    </listener>
+    <session-config>
+        <session-timeout>
+            30
+        </session-timeout>
+    </session-config>
+    <welcome-file-list>
+        <welcome-file>index.jsp</welcome-file>
+    </welcome-file-list>
+    <session-config>
+        <tracking-mode>COOKIE</tracking-mode>
+    </session-config>  
+</web-app>
