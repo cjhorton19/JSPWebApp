@@ -10,7 +10,7 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>OrderController</servlet-name>
-        <url-pattern>/order</url-pattern>
+        <url-pattern>/cart</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>CatalogController</servlet-name>
@@ -20,6 +20,7 @@
         <listener-class>store.util.OrderContextListener</listener-class>
     </listener>
     <session-config>
+        <tracking-mode>COOKIE</tracking-mode>
         <session-timeout>
             30
         </session-timeout>
@@ -27,7 +28,4 @@
     <welcome-file-list>
         <welcome-file>index.jsp</welcome-file>
     </welcome-file-list>
-    <session-config>
-        <tracking-mode>COOKIE</tracking-mode>
-    </session-config>  
 </web-app>

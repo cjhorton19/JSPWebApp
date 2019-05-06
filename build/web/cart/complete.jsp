@@ -1,17 +1,26 @@
-<%-- 
-    Document   : complete
-    Created on : Apr 30, 2019, 7:45:49 PM
-    Author     : curti
+<jsp:include page="/includes/header.jsp" />
+<jsp:include page="/includes/column_left_all.jsp" />
+<%-- Use the following left column instead after you configure a 
+     secure connection as described in chapter 15.
+<jsp:include page="/includes/column_left_all_absolute.jsp" />
 --%>
 
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
-    </head>
-    <body>
-        <h1>Hello World!</h1>
-    </body>
-</html>
+<!-- begin middle column -->
+
+<section>
+
+<h1>Thank you, ${user.firstName}</h1>
+
+<!-- store email address as a global variable and use EL to display it -->
+
+<p>Your order has been submitted. We'll begin processing your 
+order right away. If you have any questions about your order, 
+please feel free to contact us at 
+<a href="mailto:${custServEmail}">${custServEmail}</a></p>
+
+</section>
+
+<!-- end middle column -->
+
+<jsp:include page="/includes/column_right_news.jsp" />
+<jsp:include page="/includes/footer.jsp" />

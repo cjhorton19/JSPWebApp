@@ -9,6 +9,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import store.business.Product;
@@ -22,17 +23,23 @@ public class EmpDao {
         Connection con=null;  
         try{  
             Class.forName("com.mysql.jdbc.Driver");  
-            con=DriverManager.getConnection("jdbc:mysql://localhost:3306/test","","");  
-        }catch(Exception e){System.out.println(e);}  
+            con=DriverManager.getConnection("jdbc:mysql://localhost:3307/earnyour","","");  
+        }catch(ClassNotFoundException | SQLException e){System.out.println(e);}  
         return con;  
     }  
   
-    public static List<Product> getRecords(int start,int total){  
+    /**
+     *
+     * @param start
+     * @param total
+     * @return
+     */
+    public static List<Product> getRecords(Long start,int total){  
         List<Product> list=new ArrayList<Product>();  
         try{  
             Connection con=getConnection();  
             PreparedStatement ps=con.prepareStatement(  
-"select * from emp limit "+(start-1)+","+total);  
+"select * from product limit "+(start-1)+","+total);  
             ResultSet rs=ps.executeQuery();  
             while(rs.next()){  
                 Product p = new Product();  

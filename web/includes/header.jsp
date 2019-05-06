@@ -31,7 +31,7 @@
             <a class="nav-link" href="<c:url value='/catalog/men'/>">Men</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="<c:url value='/catalog/women'/>">Women</a>
+            <a class="nav-link" href="./catalog/view.jsp">Women</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="<c:url value='/catalog/accessories'/>">Accessories</a>
